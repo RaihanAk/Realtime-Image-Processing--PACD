@@ -59,6 +59,13 @@ namespace RealtimeImageProcessing
         private void btStart_Click(object sender, EventArgs e)
         {
             grabber = new VideoCapture(cbCamera.SelectedIndex);
+
+            rbColor.Enabled = true;
+            rbInvert.Enabled = true;
+            rbGrey.Enabled = true;
+            rbBrightness.Enabled = true;
+            rbBinary.Enabled = true;
+
             btStop.Enabled = true;
             btCapture.Enabled = true;
             btStart.Enabled = false;
@@ -68,6 +75,14 @@ namespace RealtimeImageProcessing
         private void btStop_Click(object sender, EventArgs e)
         {
             grabber.Dispose();
+
+            rbColor.Checked = true;
+            rbColor.Enabled = false;
+            rbInvert.Enabled = false;
+            rbGrey.Enabled = false;
+            rbBrightness.Enabled = false;
+            rbBinary.Enabled = false;
+
             btStart.Enabled = true;
             btStop.Enabled = false;
             btCapture.Enabled = false;

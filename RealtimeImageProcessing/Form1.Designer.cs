@@ -70,6 +70,7 @@
             this.btSave = new System.Windows.Forms.Button();
             this.btSwitch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabColorDetect.SuspendLayout();
@@ -88,7 +89,7 @@
             // imageBox
             // 
             this.imageBox.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.imageBox.Location = new System.Drawing.Point(12, 12);
+            this.imageBox.Location = new System.Drawing.Point(12, 39);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(831, 629);
             this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,7 +100,7 @@
             // 
             this.btStop.Enabled = false;
             this.btStop.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStop.Location = new System.Drawing.Point(944, 55);
+            this.btStop.Location = new System.Drawing.Point(944, 80);
             this.btStop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(82, 38);
@@ -112,7 +113,7 @@
             // 
             this.cbCamera.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCamera.FormattingEnabled = true;
-            this.cbCamera.Location = new System.Drawing.Point(1034, 19);
+            this.cbCamera.Location = new System.Drawing.Point(1034, 44);
             this.cbCamera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCamera.Name = "cbCamera";
             this.cbCamera.Size = new System.Drawing.Size(285, 31);
@@ -122,7 +123,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(860, 22);
+            this.label1.Location = new System.Drawing.Point(860, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 23);
             this.label1.TabIndex = 14;
@@ -131,7 +132,7 @@
             // btStart
             // 
             this.btStart.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStart.Location = new System.Drawing.Point(860, 55);
+            this.btStart.Location = new System.Drawing.Point(860, 80);
             this.btStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(78, 38);
@@ -146,7 +147,7 @@
             this.tabControl.Controls.Add(this.tabImageProcess);
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(860, 111);
+            this.tabControl.Location = new System.Drawing.Point(860, 136);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(668, 535);
@@ -362,6 +363,7 @@
             // rbBrightness
             // 
             this.rbBrightness.AutoSize = true;
+            this.rbBrightness.Enabled = false;
             this.rbBrightness.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBrightness.Location = new System.Drawing.Point(30, 193);
             this.rbBrightness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -374,6 +376,7 @@
             // rbInvert
             // 
             this.rbInvert.AutoSize = true;
+            this.rbInvert.Enabled = false;
             this.rbInvert.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInvert.Location = new System.Drawing.Point(248, 31);
             this.rbInvert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -441,6 +444,7 @@
             // rbBinary
             // 
             this.rbBinary.AutoSize = true;
+            this.rbBinary.Enabled = false;
             this.rbBinary.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBinary.Location = new System.Drawing.Point(368, 192);
             this.rbBinary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -453,6 +457,7 @@
             // rbGrey
             // 
             this.rbGrey.AutoSize = true;
+            this.rbGrey.Enabled = false;
             this.rbGrey.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbGrey.Location = new System.Drawing.Point(408, 31);
             this.rbGrey.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -466,6 +471,7 @@
             // 
             this.rbColor.AutoSize = true;
             this.rbColor.Checked = true;
+            this.rbColor.Enabled = false;
             this.rbColor.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbColor.Location = new System.Drawing.Point(30, 31);
             this.rbColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -510,7 +516,7 @@
             // 
             this.btCapture.Enabled = false;
             this.btCapture.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCapture.Location = new System.Drawing.Point(1410, 55);
+            this.btCapture.Location = new System.Drawing.Point(1410, 80);
             this.btCapture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCapture.Name = "btCapture";
             this.btCapture.Size = new System.Drawing.Size(114, 38);
@@ -521,6 +527,7 @@
             // 
             // imageBoxCaptured
             // 
+            this.imageBoxCaptured.BackColor = System.Drawing.Color.MediumTurquoise;
             this.imageBoxCaptured.Location = new System.Drawing.Point(32, 38);
             this.imageBoxCaptured.Name = "imageBoxCaptured";
             this.imageBoxCaptured.Size = new System.Drawing.Size(595, 368);
@@ -562,12 +569,22 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Switch";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1539, 24);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1539, 653);
+            this.ClientSize = new System.Drawing.Size(1539, 683);
             this.Controls.Add(this.btCapture);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btStop);
@@ -575,6 +592,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.imageBox);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Realtime Image Processing";
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
@@ -640,6 +659,7 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btSwitch;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 
