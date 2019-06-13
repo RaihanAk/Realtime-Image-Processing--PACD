@@ -68,6 +68,8 @@
             this.btCapture = new System.Windows.Forms.Button();
             this.imageBoxCaptured = new Emgu.CV.UI.ImageBox();
             this.btSave = new System.Windows.Forms.Button();
+            this.btSwitch = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabColorDetect.SuspendLayout();
@@ -85,9 +87,11 @@
             // 
             // imageBox
             // 
+            this.imageBox.BackColor = System.Drawing.Color.MediumTurquoise;
             this.imageBox.Location = new System.Drawing.Point(12, 12);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(831, 629);
+            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageBox.TabIndex = 2;
             this.imageBox.TabStop = false;
             // 
@@ -150,6 +154,8 @@
             // 
             // tabColorDetect
             // 
+            this.tabColorDetect.Controls.Add(this.label10);
+            this.tabColorDetect.Controls.Add(this.btSwitch);
             this.tabColorDetect.Controls.Add(this.label3);
             this.tabColorDetect.Controls.Add(this.colorResAlter);
             this.tabColorDetect.Controls.Add(this.colorAlterbtn);
@@ -170,7 +176,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 155);
+            this.label3.Location = new System.Drawing.Point(23, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(230, 23);
             this.label3.TabIndex = 8;
@@ -179,7 +185,7 @@
             // colorResAlter
             // 
             this.colorResAlter.BackColor = System.Drawing.Color.Transparent;
-            this.colorResAlter.Location = new System.Drawing.Point(27, 191);
+            this.colorResAlter.Location = new System.Drawing.Point(27, 211);
             this.colorResAlter.Name = "colorResAlter";
             this.colorResAlter.Size = new System.Drawing.Size(40, 38);
             this.colorResAlter.TabIndex = 7;
@@ -188,9 +194,9 @@
             // colorAlterbtn
             // 
             this.colorAlterbtn.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorAlterbtn.Location = new System.Drawing.Point(73, 191);
+            this.colorAlterbtn.Location = new System.Drawing.Point(73, 211);
             this.colorAlterbtn.Name = "colorAlterbtn";
-            this.colorAlterbtn.Size = new System.Drawing.Size(102, 38);
+            this.colorAlterbtn.Size = new System.Drawing.Size(130, 38);
             this.colorAlterbtn.TabIndex = 6;
             this.colorAlterbtn.Text = "Color Alter";
             this.colorAlterbtn.UseVisualStyleBackColor = true;
@@ -209,7 +215,7 @@
             // colorRes2
             // 
             this.colorRes2.BackColor = System.Drawing.Color.Transparent;
-            this.colorRes2.Location = new System.Drawing.Point(257, 68);
+            this.colorRes2.Location = new System.Drawing.Point(330, 68);
             this.colorRes2.Name = "colorRes2";
             this.colorRes2.Size = new System.Drawing.Size(40, 38);
             this.colorRes2.TabIndex = 4;
@@ -218,9 +224,9 @@
             // color2btn
             // 
             this.color2btn.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.color2btn.Location = new System.Drawing.Point(303, 68);
+            this.color2btn.Location = new System.Drawing.Point(376, 68);
             this.color2btn.Name = "color2btn";
-            this.color2btn.Size = new System.Drawing.Size(79, 38);
+            this.color2btn.Size = new System.Drawing.Size(89, 38);
             this.color2btn.TabIndex = 3;
             this.color2btn.Text = "Color 2";
             this.color2btn.UseVisualStyleBackColor = true;
@@ -240,7 +246,7 @@
             this.color1btn.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.color1btn.Location = new System.Drawing.Point(73, 68);
             this.color1btn.Name = "color1btn";
-            this.color1btn.Size = new System.Drawing.Size(79, 38);
+            this.color1btn.Size = new System.Drawing.Size(89, 38);
             this.color1btn.TabIndex = 0;
             this.color1btn.Text = "Color 1";
             this.color1btn.UseVisualStyleBackColor = true;
@@ -535,10 +541,32 @@
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // btSwitch
+            // 
+            this.btSwitch.Font = new System.Drawing.Font("Nunito", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSwitch.Location = new System.Drawing.Point(227, 68);
+            this.btSwitch.Name = "btSwitch";
+            this.btSwitch.Size = new System.Drawing.Size(52, 34);
+            this.btSwitch.TabIndex = 9;
+            this.btSwitch.Text = "<-->";
+            this.btSwitch.UseVisualStyleBackColor = true;
+            this.btSwitch.Click += new System.EventHandler(this.btSwitch_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(220, 106);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 23);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Switch";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1539, 653);
             this.Controls.Add(this.btCapture);
             this.Controls.Add(this.tabControl);
@@ -610,6 +638,8 @@
         private Emgu.CV.UI.ImageBox imageBoxCaptured;
         private System.Windows.Forms.Button btCapture;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btSwitch;
     }
 }
 

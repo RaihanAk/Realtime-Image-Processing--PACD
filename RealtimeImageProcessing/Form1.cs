@@ -91,6 +91,17 @@ namespace RealtimeImageProcessing
             colorRes2.BackColor = colorDialog2.Color;
         }
 
+        private void btSwitch_Click(object sender, EventArgs e)
+        {
+            Color temp = new Color();
+            temp = colorDialog1.Color;
+            colorDialog1.Color = colorDialog2.Color;
+            colorDialog2.Color = temp;
+
+            colorRes1.BackColor = colorDialog1.Color;
+            colorRes2.BackColor = colorDialog2.Color;
+        }
+
         private void colorAlterbtn_Click(object sender, EventArgs e)
         {
             colorDialogAlter.ShowDialog();
@@ -158,6 +169,7 @@ namespace RealtimeImageProcessing
                     ret = img;
 
                     // Apparently, Emgu CV loves to use BGR format
+                    
                     var image = img.InRange(new Bgr(colorDialog1.Color), new Bgr(colorDialog2.Color));
                     var mat = img.Mat;
                     mat.SetTo(new MCvScalar(
