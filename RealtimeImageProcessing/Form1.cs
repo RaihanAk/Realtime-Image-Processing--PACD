@@ -60,6 +60,7 @@ namespace RealtimeImageProcessing
         {
             grabber = new VideoCapture(cbCamera.SelectedIndex);
             btStop.Enabled = true;
+            btCapture.Enabled = true;
             btStart.Enabled = false;
             Application.Idle += ProsesFrame;
         }
@@ -69,6 +70,7 @@ namespace RealtimeImageProcessing
             grabber.Dispose();
             btStart.Enabled = true;
             btStop.Enabled = false;
+            btCapture.Enabled = false;
         }
 
         private void BtExit_Click(object sender, EventArgs e)
@@ -93,6 +95,26 @@ namespace RealtimeImageProcessing
         {
             colorDialogAlter.ShowDialog();
             colorResAlter.BackColor = colorDialogAlter.Color;
+        }
+
+        private void btCapture_Click(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedTab == tabColorDetect)
+                imageBoxCaptured.Image = ret;
+            else if (tabControl.SelectedTab == tabImageProcess)
+                imageBoxCaptured.Image = img;
+
+            btSave.Enabled = true;
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Image Files (*.jpg; *.png;)|*.jpg; *.png";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                imageBoxCaptured.Image.Save(save.FileName);
+            }
         }
 
         private void brightness_trackBar_Scroll(object sender, EventArgs e)
@@ -292,7 +314,7 @@ namespace RealtimeImageProcessing
 
                 // Render
                 imageBox.Image = img;
-            }            
+            }
         }
         #endregion
 

@@ -64,6 +64,10 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.colorDialogAlter = new System.Windows.Forms.ColorDialog();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btCapture = new System.Windows.Forms.Button();
+            this.imageBoxCaptured = new Emgu.CV.UI.ImageBox();
+            this.btSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabColorDetect.SuspendLayout();
@@ -75,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightness_trackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThresholdValue)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBoxCaptured)).BeginInit();
             this.SuspendLayout();
             // 
             // imageBox
@@ -134,6 +140,7 @@
             // 
             this.tabControl.Controls.Add(this.tabColorDetect);
             this.tabControl.Controls.Add(this.tabImageProcess);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(860, 111);
             this.tabControl.Name = "tabControl";
@@ -153,7 +160,7 @@
             this.tabColorDetect.Controls.Add(this.color1btn);
             this.tabColorDetect.Location = new System.Drawing.Point(4, 32);
             this.tabColorDetect.Name = "tabColorDetect";
-            this.tabColorDetect.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabColorDetect.Padding = new System.Windows.Forms.Padding(3);
             this.tabColorDetect.Size = new System.Drawing.Size(660, 499);
             this.tabColorDetect.TabIndex = 0;
             this.tabColorDetect.Text = "Color Detection";
@@ -259,7 +266,7 @@
             this.tabImageProcess.Controls.Add(this.rbColor);
             this.tabImageProcess.Location = new System.Drawing.Point(4, 32);
             this.tabImageProcess.Name = "tabImageProcess";
-            this.tabImageProcess.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabImageProcess.Padding = new System.Windows.Forms.Padding(3);
             this.tabImageProcess.Size = new System.Drawing.Size(660, 499);
             this.tabImageProcess.TabIndex = 1;
             this.tabImageProcess.Text = "Image Processing";
@@ -481,11 +488,59 @@
             this.colorDialogAlter.Color = System.Drawing.Color.SkyBlue;
             this.colorDialogAlter.FullOpen = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btSave);
+            this.tabPage1.Controls.Add(this.imageBoxCaptured);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(660, 499);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Captured Image";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btCapture
+            // 
+            this.btCapture.Enabled = false;
+            this.btCapture.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapture.Location = new System.Drawing.Point(1410, 55);
+            this.btCapture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCapture.Name = "btCapture";
+            this.btCapture.Size = new System.Drawing.Size(114, 38);
+            this.btCapture.TabIndex = 19;
+            this.btCapture.Text = "Capture";
+            this.btCapture.UseVisualStyleBackColor = true;
+            this.btCapture.Click += new System.EventHandler(this.btCapture_Click);
+            // 
+            // imageBoxCaptured
+            // 
+            this.imageBoxCaptured.Location = new System.Drawing.Point(32, 38);
+            this.imageBoxCaptured.Name = "imageBoxCaptured";
+            this.imageBoxCaptured.Size = new System.Drawing.Size(595, 368);
+            this.imageBoxCaptured.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageBoxCaptured.TabIndex = 2;
+            this.imageBoxCaptured.TabStop = false;
+            // 
+            // btSave
+            // 
+            this.btSave.Enabled = false;
+            this.btSave.Font = new System.Drawing.Font("Nunito", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSave.Location = new System.Drawing.Point(280, 431);
+            this.btSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(114, 38);
+            this.btSave.TabIndex = 20;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 653);
+            this.Controls.Add(this.btCapture);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btStop);
             this.Controls.Add(this.cbCamera);
@@ -507,6 +562,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.brightness_trackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThresholdValue)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageBoxCaptured)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,6 +606,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TrackBar binary_trackBar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage1;
+        private Emgu.CV.UI.ImageBox imageBoxCaptured;
+        private System.Windows.Forms.Button btCapture;
+        private System.Windows.Forms.Button btSave;
     }
 }
 
